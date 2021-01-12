@@ -16,6 +16,14 @@ const MainContainer: FunctionComponent<{ initial?: Models.QuizResponse; }> = ({ 
       .catch((err) => console.log(err));
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleButtonClick = (): void => {
+
+  };
+
 
   return (
     <main className='Main'>
