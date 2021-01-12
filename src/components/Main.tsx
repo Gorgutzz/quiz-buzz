@@ -21,12 +21,22 @@ const MainContainer: FunctionComponent<{ initial?: Models.QuizResponse; }> = ({ 
   }, []);
 
   const handleButtonClick = (): void => {
-
+    setShouldShowCards(true);
   };
-
 
   return (
     <main className='Main'>
+      {!shouldShowCards ? (
+        <>
+          <h2>Welcome to Quizz Buzz</h2>
+          <div className='StartEndCard'>
+            <h2>Answer 10 random true or false questions</h2>
+            <p>Can you get a perfect score?</p>
+
+            <button type='submit' className='Button' onClick={() => handleButtonClick()}>Get Started!</button>
+          </div>
+        </>
+      ) : <Card quizQuestions={quizzes} />}
     </main>
   );
 };
