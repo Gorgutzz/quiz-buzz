@@ -32,7 +32,7 @@ const Card = (props: Props) => {
     e.persist();
     e.preventDefault();
     const isCorrect: boolean = e.target.id.includes(correctAnswer.toString()) ? true : false;
-    const renderAnswer: string = isCorrect ? 'Correct!' : 'Wrong Answer!';
+    const renderAnswer: string = isCorrect ? 'Correct!' : 'Sorry, wrong answer!';
 
     setState({
       ...state,
@@ -41,6 +41,13 @@ const Card = (props: Props) => {
       revealAnswer: renderAnswer
     });
 
+    if (currentIndex + 1 > quizQuestions.length) {
+      setState({ ...state, showFinished: true });
+    } else {
+      setTimeout(() => {
+        setState({ ...state, score: isCorrect ? score + 1 : score + 0, currentIndex: currentIndex + 1, revealAnswer: '' });
+      }, 2000);
+    }
   };
 
 };
