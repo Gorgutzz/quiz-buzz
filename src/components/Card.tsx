@@ -50,6 +50,21 @@ const Card = (props: Props) => {
     }
   };
 
+  const renderAnswer = (): React.ReactFragment => {
+    return (
+      <>{revealAnswer}</>
+    );
+  };
+
+  return (
+    quizQuestions && quizQuestions.length > 0 && (currentIndex < quizQuestions.length) ?
+      <div>
+        <h2>{quizQuestions[currentIndex].category}</h2>
+        <main className='Card'>
+          <h1>{_.unescape(quizQuestions[currentIndex].question)}</h1>
+          <div>Difficulty: {quizQuestions[currentIndex].difficulty}</div>
+        </main>
+  );
 };
 
 export default Card;
