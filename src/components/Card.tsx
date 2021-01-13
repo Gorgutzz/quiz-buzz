@@ -28,6 +28,21 @@ const Card = (props: Props) => {
     selectedOption,
   } = state;
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, correctAnswer: Models.Quiz): void => {
+    e.persist();
+    e.preventDefault();
+    const isCorrect: boolean = e.target.id.includes(correctAnswer.toString()) ? true : false;
+    const renderAnswer: string = isCorrect ? 'Correct!' : 'Wrong Answer!';
+
+    setState({
+      ...state,
+      selectedOption: e.target.id.toString(),
+      answered: isCorrect ? true : false,
+      revealAnswer: renderAnswer
+    });
+
+  };
+
 };
 
 export default Card;
