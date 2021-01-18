@@ -64,6 +64,19 @@ const Card = (props: Props) => {
           <h1>{_.unescape(quizQuestions[currentIndex].question)}</h1>
           <div>Difficulty: {quizQuestions[currentIndex].difficulty}</div>
         </main>
+
+        <section>
+          <div className='Answer'>{renderAnswer()}</div>
+
+            <div className='inputGroup' role='radiogroup'>
+              <label id='label' checked={selectedOption === 'True'} onChange={(e) => handleChange(e, quizQuestions[currentIndex].correct_answer)} />
+              True<span className='checkmark'></span></label>
+            </div>
+            <div className='inputGroup' role='radiogroup'>
+              <label id='label' checked={selectedOption === 'False'} onChange={(e) => handleChange(e, quizQuestions[currentIndex].correct_answer)} />
+              False<span className='checkmark'></span></label>
+            </div>
+        </section>
   );
 };
 
