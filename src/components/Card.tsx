@@ -80,7 +80,22 @@ const Card = (props: Props) => {
           </form>
         </section>
 
+        <footer className='Badge'>
+          Question {currentIndex + 1}/{quizQuestions.length}
+        </footer>
+      </div>
+      :
+      <div>
+        <main className='Card'>
+          <h3>
+            You scored {score} / {quizQuestions.length}
+          </h3>
 
+          <button className='Button' type='reset' onClick={() => setState(initialState)}>
+            Start Over
+          </button>
+        </main >
+      </div>
   );
 };
 
