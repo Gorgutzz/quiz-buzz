@@ -68,15 +68,19 @@ const Card = (props: Props) => {
         <section>
           <div className='Answer'>{renderAnswer()}</div>
 
+          <form className='form'>
             <div className='inputGroup' role='radiogroup'>
-              <label id='label' checked={selectedOption === 'True'} onChange={(e) => handleChange(e, quizQuestions[currentIndex].correct_answer)} />
+              <label id='label' htmlFor='radioTrue' className='container'><input id='radioTrue' name='radio' type='radio' checked={selectedOption === 'True'} onChange={(e) => handleChange(e, quizQuestions[currentIndex].correct_answer)} />
               True<span className='checkmark'></span></label>
             </div>
             <div className='inputGroup' role='radiogroup'>
-              <label id='label' checked={selectedOption === 'False'} onChange={(e) => handleChange(e, quizQuestions[currentIndex].correct_answer)} />
+              <label id='label' htmlFor='radioFalse' className='container'><input id='radioFalse' name='radio' type='radio' checked={selectedOption === 'False'} onChange={(e) => handleChange(e, quizQuestions[currentIndex].correct_answer)} />
               False<span className='checkmark'></span></label>
             </div>
+          </form>
         </section>
+
+
   );
 };
 
