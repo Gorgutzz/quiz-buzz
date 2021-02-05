@@ -1,8 +1,8 @@
 .Main {
   place-content: center;
   background-color: rgb(232, 231, 231);
-  height: 120vh;
-  width: 120%;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -14,8 +14,8 @@
 .StartEndCard {
   display: flex;
   flex-direction: column;
-  width: 120%;
-  height: 360px;
+  width: 100%;
+  height: 350px;
   place-content: center;
   border: rgb(186, 185, 185) 1px solid;
   color: rgb(70, 70, 70);
