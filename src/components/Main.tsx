@@ -10,7 +10,7 @@ const MainContainer: FunctionComponent<{ initial?: Models.QuizResponse; }> = ({ 
   const [shouldShowCards, setShouldShowCards] = useState(false);
 
   const fetchData = async (): Promise<void> => {
-    const res = await fetch('https://opentdb.com/api.php?amount=10&type=boolean');
+    const res = await fetch('https://opentdb.com/api.php?amount=10&category=18&type=boolean');
     res.json()
       .then((res) => setQuizzes(res))
       .catch((err) => console.log(err));
