@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import * as Models from './../models';
 import './Card.scss';
 
+import parse from 'html-react-parser'
+
+
 interface Props {
   quizQuestions?: Models.QuizResponse;
 }
@@ -61,7 +64,7 @@ const Card = (props: Props) => {
       <div>
         <h2>{quizQuestions[currentIndex].category}</h2>
         <main className='Card'>
-          <h1>{_.unescape(quizQuestions[currentIndex].question)}</h1>
+          <h1>{parse(_.unescape(quizQuestions[currentIndex].question))}</h1>
           <div>Difficulty: {quizQuestions[currentIndex].difficulty}</div>
         </main>
 
